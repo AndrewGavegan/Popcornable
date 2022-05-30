@@ -2,11 +2,11 @@ const { Movie } = require('../models');
 
 const data = [
     {
-        name: "Sound of Metal",
+        name: 'Sound of Metal',
         year: 2019,
-        genre: "Drama",
+        genre: 'Drama',
         runtime: 120,
-        director: "Darius Marder"
+        director: 'Darius Marder'
     }
 ]
 
