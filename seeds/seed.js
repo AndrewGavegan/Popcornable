@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 // import our models
+import movie from 
 // const { User, movieReview } = require('../models');
 
 // STARTER CODE FROM MINI PROJECT, REVIEW AGAINST MODELS WHEN CREATED
