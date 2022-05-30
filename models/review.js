@@ -11,22 +11,40 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
-    movie: {
-      type: DataTypes.STRING,
+    movie_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'movie',
+        key: 'id'
+      }
     },
-    Review: {
+    body: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     rating: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'review'
   });
 
 module.exports = Review;
