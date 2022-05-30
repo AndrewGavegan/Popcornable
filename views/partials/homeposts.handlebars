@@ -1,9 +1,10 @@
 <div class="col">
-  <div class="card shadow-sm">
+  <div class="card shadow-sm" data-movieid="{{review.movie_id}}">
     <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg"></img>
     <div class="card-body">
+      <p></p>
       <p class="card-text">
-        [post content] This is a wider card with supporting text below as a
+        {{review.body}} This is a wider card with supporting text below as a
         natural lead-in to additional content. This content is a
         little bit longer.
       </p>
@@ -18,7 +19,7 @@
             View or Comment
           </button>
         </div>
-        <small class="text-muted">[date posted]</small>
+        <small class="text-muted">{{review.createdAt}}</small>
       </div>
     </div>
   </div>
