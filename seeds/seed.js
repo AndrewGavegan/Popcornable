@@ -1,27 +1,22 @@
+const seedReviews = require('./review');
+const seedMovies = require('./movie');
+const seedUsers = require('./user');
 const sequelize = require('../config/connection');
-// import our models
-import movie from 
-// const { User, movieReview } = require('../models');
 
-// STARTER CODE FROM MINI PROJECT, REVIEW AGAINST MODELS WHEN CREATED
-const movieReviewsData = require('./movieReviewsData.json');
-
-const seedDatabase = async () => {
+const seed = async () => {
   await sequelize.sync({ force: true });
+  console.log('\n--- DB SYCNED ---\n');
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  await seedUsers();
+  console.log('\n--- USER SYCNED ---\n');
 
-  for (const movieReview of movieReviewsData) {
-    await movieReview.create({
-      ...movieReview,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  await seedMovies();
+  console.log('\n--- MOVIE SYCNED ---\n');
+
+  await seedReviews();
+  console.log('\n--- REVIEW SYCNED ---\n');
 
   process.exit(0);
 };
 
-seedDatabase();
+seed();
