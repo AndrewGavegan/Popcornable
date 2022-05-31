@@ -6,7 +6,7 @@ const data = [
         year: 2019,
         genre: 'Drama',
         runtime: 120,
-        director: "Darius Marder"
+        director: 'Darius Marder'
     },
     {
         name: "Spider-Man: Into the Spider-Verse",
