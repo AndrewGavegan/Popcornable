@@ -9,18 +9,18 @@ const data = [
         director: 'Darius Marder'
     },
     {
-        name: "Spider-Man: Into the Spider-Verse",
+        name: 'Spider-Man: Into the Spider-Verse',
         year: 2018,
-        genre: "action",
+        genre: 'action',
         runtime: 120,
-        director: "Bob Persichetti, Peter Ramsey, Rodney Rothman"
+        director: 'Bob Persichetti, Peter Ramsey, Rodney Rothman'
     },
     {
-        name: "Everything Everywhere All at Once",
+        name: 'Everything Everywhere All at Once',
         year: 2022,
-        genre: "action/comedy",
+        genre: 'action/comedy',
         runtime: 140,
-        director: "Dan Kwan, Daniel Scheinert"
+        director: 'Dan Kwan, Daniel Scheinert'
     }
 ]
 
