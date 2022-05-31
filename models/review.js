@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+// const Movie = require('./movie');
+// const User = require('./User');
 
 class Review extends Model { }
 
@@ -30,9 +32,9 @@ Review.init(
     body: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1],
-      },
+      // validate: {
+      //   len: [1],
+      // },
     },
     rating: {
       type: DataTypes.INTEGER,

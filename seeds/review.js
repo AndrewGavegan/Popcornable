@@ -1,4 +1,4 @@
-const { Review } = require('../models/review');
+const { Review } = require('../models/');
 
 const reviewdata = [
   {  
@@ -38,7 +38,7 @@ const reviewdata = [
     rating: 5,
   },
   {
-    user_id: 6,
+    user_id: 3,
     movie_id: 2,
     body: 'good movie',
     rating: 4,
