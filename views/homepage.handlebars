@@ -23,8 +23,10 @@
               short so folks don't simply skip over it entirely.
             </p>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search for a movie" aria-label="Search">
-              <button class="btn btn-outline-success" type="searchMovie">Search</button>
+              <input class="form-control me-2" id="searchBar" type="search" placeholder="Search for a movie"
+                aria-label="Search">
+              {{!-- <button class="btn btn-outline-success" type="searchMovie">Search</button> --}}
+              <div id="autoComplete"></div>
             </form>
             {{!-- <p>
               <a href="#" class="btn btn-primary my-2">Login</a>
