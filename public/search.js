@@ -2,7 +2,7 @@ document.querySelector('#searchBar') = searchBar
 document.querySelector('#autoComplete') = autoList
 
 const movieSearch = async userInput => {
-  const res = await fetch('../movieApi/assets/json/allMovies.json');
+  const res = await fetch('../seeds/movie.js');
   const results = await res.json();
   let matches = results.filter(match => {
     const compare = new RegExp(`^${userInput}`, 'gi');
@@ -20,7 +20,7 @@ const movieSearch = async userInput => {
 const renderHTML = matches => {
   if (matches.length > 0) {
     const html = matches.map(match => `
-    <div class='card card-body mb-1'>
+    <div class='card card-body mb-1' id='selectMovie'>
       <h4>${match.name} (${match.director})</h4>
     </div>
     `).join('');
