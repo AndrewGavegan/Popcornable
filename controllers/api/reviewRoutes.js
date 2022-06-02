@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Review } = require('../../models');
 
-// // find all reviews
+// // Find all reviews
 router.get('/', async (req, res) => {
   try {
     const reviewData = await Review.findAll({
@@ -46,7 +46,41 @@ if (!reviewData){
     console.log(err);
     res.status(500).json(err);
   }
-}) 
+}) ;
 
+// Update Review
+router.put('/:id', (req, res) => {
+  Review.update(
+    {
+      body: req.body.body,
+      rating: req.body.rating,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedReview) => {
+      res.json(updatedReview);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
+// Delete Review
+router.delete('/:id', (req, res) => {
+  Review.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedBook) => {
+      res.json(deletedBook);
+    })
+    .catch((err) => res.json(err));
+});
 
 module.exports = router;
