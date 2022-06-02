@@ -1,0 +1,17 @@
+<div class="col-md-6">
+  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col-auto d-none d-lg-block">
+      <img src="{{movie.image_url}}" width="200" height="300"></img>
+      {{!-- link to movie's reviews added to img tag --}}
+      {{!-- <p>{{movie.image_url}}</p> --}}
+    </div>
+    
+    <div class="col p-4 d-flex flex-column position-static">
+      <div class="my-rating" data-review="{{id}}" data-rating="{{rating}}"></div>
+      <h4 class="mb-0">{{movie.name}}</h4>
+      <div class="mb-1 text-muted">{{format_date updatedAt}}</div>
+      <p class="card-text mb-auto">{{body}}</p>
+      <a href="#">Modify Post</a> <a href="#">Delete Post</a>
+    </div>
+  </div>
+</div>

@@ -29,29 +29,33 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    const data = await User.findOne({
+    console.log(`GET /api/user/${req.params.id}`);
+    const userData = await User.findOne({
       attributes: { exclude: ['password'] },
       where: {
         id: req.params.id
       },
       include: [
         {
-          model: Movie,
-          attributes: ['id', 'name', 'year', 'genre', 'runtime', 'director']
-        },
-        {
           model: Review,
-          attributes: ['id', 'body', 'rating'],
           include: {
             model: Movie,
-            attributes: ['name']
+            attributes: ['name', 'year', 'genre', 'image_url']
           }
         }]
     })
+    const data = userData.get({ plain: true });
     if (!data) {
       res.status(404).json({ message: 'No user has this ID' })
       return;
-    } res.json(data);
+    }
+    console.log(data.reviews);
+    // res.json(data);
+    // render homepage (and partial homeposts)
+    res.render("dashboard", {
+      data,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
