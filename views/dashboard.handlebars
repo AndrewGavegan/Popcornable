@@ -4,12 +4,13 @@
       <h1 class="fw-light">Reviews<h1>
     </div>
   </div>
-  <div class="container">
+  <div class="container reviews">
     <div class="row mb-2 ">
     {{#each data.reviews as |review|}}
     {{> dashposts}}
     {{/each}}
     </div>
   </div>
-  <script src="../../userhome.js"></script>
+  <script src="../../review.js"></script>
+  <script src="../../starRating.js"></script>
 </section>

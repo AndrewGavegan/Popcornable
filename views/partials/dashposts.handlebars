@@ -7,11 +7,23 @@
     </div>
     
     <div class="col p-4 d-flex flex-column position-static">
-      <div class="my-rating" data-review="{{id}}" data-rating="{{rating}}"></div>
-      <h4 class="mb-0">{{movie.name}}</h4>
-      <div class="mb-1 text-muted">{{format_date updatedAt}}</div>
-      <p class="card-text mb-auto">{{body}}</p>
-      <a href="#">Modify Post</a> <a href="#">Delete Post</a>
+      <div class="card-body multi-collapse-{{id}} collapse show" id="multi-collapse-2-{{id}}">
+        <div class="my-rating" data-review="{{id}}" data-rating="{{rating}}"></div>
+        <h4 class="mb-0">{{movie.name}}</h4>
+        <div class="mb-1 text-muted">{{format_date updatedAt}}</div>
+        <p class="card-text mb-auto">{{body}}</p>
+      </div>
+      <div class="card-body multi-collapse-{{id}} collapse"  id="multi-collapse-1-{{id}}">
+        <div class="my-rating-edit" data-review="{{id}}" data-rating="{{rating}}"></div>
+        <h4 class="mb-0">{{movie.name}}</h4>
+        <textarea class="form-control text-break" id="content-{{id}}" rows="3">{{body}}</textarea>
+        <button type="submit" class="btn btn-primary update-post" data-post="{{id}}">Update Post</button>
+        <button type="delete" class="btn btn-primary delete-post" data-post="{{id}}">Delete Post</button>
+      </div>
+    {{!-- set button as a button that can show or hide the card body --}}
+      <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse-{{id}}" aria-expanded="false" aria-controls="multi-collapse-1-{{id}} multi-collapse-2-{{id}}">
+        Modify/Delete Post
+      </button>
     </div>
   </div>
 </div>
