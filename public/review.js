@@ -1,4 +1,4 @@
-document.querySelector('').addEventListener('click', newReview)
+document.querySelector('').addEventListener('click', newReview);
 
 const newReview = async (e) => {
   e.preventDefault();
@@ -19,4 +19,4 @@ const newReview = async (e) => {
       document.location.replace(`/movie/${movie_id}`);
     }
   }
-}
+};

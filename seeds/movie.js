@@ -185,7 +185,7 @@ const data = [
     director: 'Gustavo Hernández',
     image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wZiF79hbhLK1U2Pj9bF67NAKXQR.jpg'
   }
-]
+];
 
 const seedMovies = () => Movie.bulkCreate(data);
 module.exports = seedMovies;

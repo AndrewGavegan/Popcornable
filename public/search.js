@@ -1,10 +1,9 @@
 const userInput = document.querySelector('#userInput');
-const userList = document.querySelector('#datalistOptions');
+const searchBtn = document.querySelector('#submitBtn');
 
-userInput.addEventListener('keyup', async function (e) {
-  e.preventDefault();
-  const res = await fetch('../movieApi/assets/json/allMovies.json');
+searchBtn.addEventListener('click', async function (event) {
+  event.preventDefault();
+  res = await userInput.value.toLowerCase().split(' ');
   console.log(res);
-  const data = await res.json();
-  console.log(data);
-})
+  req = await fetch(`/api/movies/${res.join('')}`);
+});

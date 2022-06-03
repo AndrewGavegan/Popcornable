@@ -18,10 +18,10 @@ const loginSubmit = async (e) => {
       // redirects to homepage if you login succesfully //
       document.location.replace('/');
     } else {
-      alert('Error, Incorrect username or password')
+      alert('Error, Incorrect username or password');
     }
   }
 };
 
 // presuming we name the form element an ID of loginForm //
-document.querySelector('loginForm').addEventListener('submit', loginSubmit)
+document.querySelector('loginForm').addEventListener('submit', loginSubmit);

@@ -4,7 +4,7 @@ const { Movie, Review, User } = require('../models');
 // Import the custom middleware
 const checkAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => { 
+router.get('/', async (req, res) => {
   try {
     // get all reviews JOIN movie, group by movie id so that the movie only shows up once in the frontpage
     const reviewData = await Review.findAll({
@@ -25,16 +25,16 @@ router.get('/', async (req, res) => {
     console.log(error);
     res.status(500).json(error);
   }
-})
+});
 
 // render login handlebars
 router.get('/login', async (req, res) => {
-  res.render('login')
-})
+  res.render('login');
+});
 
 // render signup handlebars
 router.get('/signup', async (req, res) => {
-  res.render('signup')
-})
+  res.render('signup');
+});
 
 module.exports = router;

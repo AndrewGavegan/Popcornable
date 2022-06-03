@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Movie} = require('../../models');
+const { Movie } = require('../../models');
 
 // find all movies
 router.get('/', async (req, res) => {
-  try{
+  try {
     const movieData = await Movie.findAll({
       include: [
         {
-        model: Movie,
-        attributes: ['name', 'description', 'image_url'],
+          model: Movie,
+          attributes: ['name', 'description', 'image_url'],
         },
       ],
     });
@@ -19,8 +19,8 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       movies,
       loggedIn: req.session.loggedIn,
-    }); 
-  }catch (err) {
+    });
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
 
 // find one movie
-router.get('/movie/:name', async (req, res) => {
+router.get('/movies/:name', async (req, res) => {
   try {
     const movieData = await Movie.findOne(req.params.name, {
       include: [
@@ -47,19 +47,19 @@ router.get('/movie/:name', async (req, res) => {
       ],
     });
     const movie = movieData.get({ plain: true });
-  
+
     if (!movie) {
-      res.send('<script>alert("Movie not found")</script>')
+      res.send('<script>alert("Movie not found")</script>');
       res.redirect('/');
-    return;
-  }
+      return;
+    }
     console.log(movie);
     res.render('reviews', {
       movie,
       loggedIn: req.session.loggedIn,
-    }); 
-    res.render()
-  }catch (err) {
+    });
+    res.render();
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
