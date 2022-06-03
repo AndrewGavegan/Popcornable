@@ -1,18 +1,33 @@
-
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Popcornable<h1>
-        <p class="lead text-muted">
-          Something short and leading about the collection below—its
-          contents, the creator, etc. Make it short and sweet, but not too
-          short so folks don't simply skip over it entirely.
-        </p>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search for a movie" aria-label="Search">
-          <button class="btn btn-outline-success" type="searchMovie">Search</button>
-        </form>
+            <p class="lead text-muted">
+              Something short and leading about the collection below—its
+              contents, the creator, etc. Make it short and sweet, but not too
+              short so folks don't simply skip over it entirely.
+            </p>
+            <form class="row g-3 mx-auto">
+              <div class="col-md-10">
+                <input class="form-control " list="datalistOptions" id="userInput"
+                  placeholder="Type to search movies...">
+                <datalist id="datalistOptions">
+                  {{!-- <option value="San Francisco">
+                  <option value="New York">
+                  <option value="Seattle">
+                  <option value="Los Angeles">
+                  <option value="Chicago"> --}}
+                </datalist>
+              </div>
+              <div class="col-md-2">
+                <button type='submit' id='submitBtn' class='btn btn-primary mb-4'>Search</button>
+              </div>
+            </form>
+            {{!-- <p>
+              <a href="#" class="btn btn-primary my-2">Login</a>
+              <a href="#" class="btn btn-secondary my-2">Sign up</a>
+            </p> --}}
       </div>
     </div>
     <div class="album py-5 bg-light">

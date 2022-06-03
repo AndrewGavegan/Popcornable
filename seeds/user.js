@@ -26,7 +26,7 @@ const data = [
     email: 'L_Lion@hotmail.com',
     password: 'password123'
   }
-]
+];
 
 const seedUsers = () => User.bulkCreate(data);
 module.exports = seedUsers;

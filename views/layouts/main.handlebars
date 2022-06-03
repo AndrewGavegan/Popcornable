@@ -15,27 +15,34 @@
 </head>
 
 <body>
-<header class="blog-header py-3">
-  <div class="container">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-2 pt-1">
-      </div>
-      <div class="col-8 text-center">
-      </div>
-      <div class="col-2 d-flex justify-content-end align-items-center">
-        {{#if loggedIn}}
-        <button id="logout" class="btn btn-light">Logout</button>
-        {{else}}
-        <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
-        <a class="btn btn-sm" href="/signup">Sign up</a>
-        {{/if}}
+  <header class="blog-header py-3">
+    <div class="container">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-2 pt-1">
+        </div>
+        <div class="col-8 text-center">
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center">
+          {{#if loggedIn}}
+          <button id="logout" class="btn btn-light">Logout</button>
+          {{else}}
+          <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
+          <a class="btn btn-sm" href="/signup">Sign up</a>
+          {{/if}}
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
   {{{body}}}
   <script src="../../src/jquery.star-rating-svg.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
+<script src="/search.js"></script>
+{{!--
+<script src='/public/logout.js'></script>
+<script src='/public/login.js'></script>
+<script src='/public/review.js'></script>
+<script src='/public/signup.js'></script>
+<script src='/public/dashboard.js'></script> --}}
 
 </html>

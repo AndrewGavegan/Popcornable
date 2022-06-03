@@ -1,3 +1,5 @@
+// needs to link to the button for creating a new Movie under the movie //
+document.querySelector('').addEventListener('click', newMovie);
 // vanilla javascript for dashboard.handlebars where you view reviews for a particular movie //
 const newMovie = async (e) => {
   e.preventDefault();
@@ -18,6 +20,3 @@ const newMovie = async (e) => {
     }
   }
 };
-
-// needs to link to the button for creating a new Movie under the movie //
-document.querySelector('').addEventListener('click', newMovie);

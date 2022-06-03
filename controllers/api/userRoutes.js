@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
             attributes: ['name']
           }
         }]
-    })
+    });
     res.json(data);
   } catch (err) {
     res.status(500).json(err);
@@ -43,10 +43,12 @@ router.get('/:id', async (req, res) => {
             attributes: ['name', 'year', 'genre', 'image_url']
           }
         }]
+    });
+
     })
     const data = userData.get({ plain: true });
     if (!data) {
-      res.status(404).json({ message: 'No user has this ID' })
+      res.status(404).json({ message: 'No user has this ID' });
       return;
     }
     console.log(data.reviews);
@@ -64,13 +66,13 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const data = await User.create({ username: req.body.username, email: req.body.email, password: req.body.password })
+    const data = await User.create({ username: req.body.username, email: req.body.email, password: req.body.password });
     req.session.save(() => {
       req.session.user_id = data.id;
       req.session.username = data.username;
       req.session.loggedIn = true;
 
-      res.status(200).json(data)
+      res.status(200).json(data);
     });
   } catch (err) {
     res.status(400).json(err);

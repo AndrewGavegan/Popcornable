@@ -9,16 +9,16 @@ router.get('/', async (req, res) => {
         {
           model: Review,
           attributes: [
-            'id', 
-            'user_id', 
-            'movie_id', 
+            'id',
+            'user_id',
+            'movie_id',
             'body',
             'rating',
           ]
         }
       ]
     });
-    res.render()
+    res.render();
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -28,19 +28,19 @@ router.get('/', async (req, res) => {
 // // Post a new Review
 router.post('/reviews', async (req,res) => {
   try{
-  const reviewData = await Review.create({
-  body: req.body.body,
-  rating: req.body.rating,
-});
+    const reviewData = await Review.create({
+      body: req.body.body,
+      rating: req.body.rating,
+    });
 
-req.session.save(() =>{
-  req.session.loggedIn = true;
-  res.status(200).json(reviewData)
-}) 
+    req.session.save(() =>{
+      req.session.loggedIn = true;
+      res.status(200).json(reviewData);
+    });
 
-if (!reviewData){
-  res.status(400).json ({ message: 'Add a new review or rating!'})
-}
+    if (!reviewData){
+      res.status(400).json ({ message: 'Add a new review or rating!'});
+    }
 
   }catch (err) {
     console.log(err);

@@ -1,7 +1,7 @@
 const { Review } = require('../models/');
 
 const reviewdata = [
-  {  
+  {
     user_id: 1,
     movie_id: 1,
     body: 'good movie',
