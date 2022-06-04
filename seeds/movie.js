@@ -111,7 +111,7 @@ const data = [
     genre: 'Horror',
     runtime: 98,
     director: 'Alejandro Hidalgo',
-    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hangTmbxpSV4gpHG7MgSlCWSSFa.jpg.jpg'
+    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8VcPDYIsa4f177dmWNGlLkWDOi3.jpg'
   },
   {
     name: 'The Contractor',
@@ -119,7 +119,7 @@ const data = [
     genre: 'Action, Thriller',
     runtime: 103,
     director: 'Tarik Saleh',
-    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg'
+    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rJPGPZ5soaG27MK90oKpioSiJE2.jpg'
   },
   {
     name: 'Turning Red',
@@ -127,7 +127,7 @@ const data = [
     genre: 'Animation, Family, Comedy, Fantasy',
     runtime: 100,
     director: 'Domee Shi',
-    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg'
+    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg'
   },
   {
     name: 'The Bad Guys',
@@ -143,7 +143,7 @@ const data = [
     genre: 'Action, Thriller, Crime',
     runtime: 114,
     director: 'Martin Campbell',
-    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg'
+    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/QaNLpq3Wuu2yp5ESsXYcQCOpUk.jpg'
   },
   {
     name: 'Moonfall',
@@ -151,7 +151,7 @@ const data = [
     genre: 'Science Fiction, Adventure, Action',
     runtime: 130,
     director: 'Roland Emmerich',
-    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg'
+    image_url: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg'
   },
   {
     name: 'The Takedown',
