@@ -7,7 +7,7 @@
  *  Licensed under MIT
  */
 
-;(function ( $, window, document, undefined ) {
+(function ( $, window, document, undefined ) {
 
   'use strict';
 
@@ -39,7 +39,7 @@
     onLeave: noop
   };
 
-	// The actual plugin constructor
+  // The actual plugin constructor
   var Plugin = function( element, options ) {
     var _rating;
     var newRating;
@@ -80,7 +80,9 @@
     },
 
     addListeners: function(){
-      if( this.settings.readOnly ){ return; }
+      if( this.settings.readOnly ){
+        return;
+      }
       this.$stars.on('mouseover', this.hoverRating.bind(this));
       this.$stars.on('mouseout', this.restoreState.bind(this));
       this.$stars.on('click', this.handleRating.bind(this));
@@ -168,8 +170,8 @@
         // has another half rating, add half star
         leftClass = ( index - endIndex === 0.5 ) ? stateClass : leftClass;
 
-        $polygonLeft.attr('class', 'svg-'  + leftClass + '-' + this._uid);
-        $polygonRight.attr('class', 'svg-'  + rightClass + '-' + this._uid);
+        $polygonLeft.attr('class', 'svg-' + leftClass + '-' + this._uid);
+        $polygonRight.attr('class', 'svg-' + rightClass + '-' + this._uid);
 
         // get color for level
         var ratedColorsIndex = endIndex >= 0 ? Math.ceil(endIndex) : 0;
@@ -190,14 +192,14 @@
           if (index <= endIndex) {
             $polygonRight.attr('style', 'fill:'+ratedColor);
           } else {
-            //lets you deselect stars 
+            //lets you deselect stars
             $polygonLeft.attr('style', 'stroke-opacity: 0;');
           }
 
           if (index <= endIndex) {
             $polygonRight.attr('style', 'fill:' + ratedColor);
           } else {
-            //lets you deselect stars 
+            //lets you deselect stars
             $polygonRight.attr('style', 'stroke-opacity: 0;');
           }
         }
@@ -209,7 +211,7 @@
       var baseUrl = s.baseUrl ? location.href.split('#')[0] : '';
 
       // inject an svg manually to have control over attributes
-      var star = '<div class="jq-star" style="width:' + s.starSize+ 'px;  height:' + s.starSize + 'px;"><svg version="1.0" class="jq-star-svg" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg" ' + this.getSvgDimensions(s.starShape) +  ' stroke-width:' + s.strokeWidth + 'px;" xml:space="preserve"><style type="text/css">.svg-empty-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_1_);}.svg-hovered-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_2_);}.svg-active-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_3_);}.svg-rated-' + this._uid + '{fill:' + s.ratedColor + ';}</style>' +
+      var star = '<div class="jq-star" style="width:' + s.starSize+ 'px;  height:' + s.starSize + 'px;"><svg version="1.0" class="jq-star-svg" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg" ' + this.getSvgDimensions(s.starShape) + ' stroke-width:' + s.strokeWidth + 'px;" xml:space="preserve"><style type="text/css">.svg-empty-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_1_);}.svg-hovered-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_2_);}.svg-active-' + this._uid + '{fill:url(' + baseUrl + '#' + this._uid + '_SVGID_3_);}.svg-rated-' + this._uid + '{fill:' + s.ratedColor + ';}</style>' +
 
       this.getLinearGradient(this._uid + '_SVGID_1_', s.emptyColor, s.emptyColor, s.starShape) +
       this.getLinearGradient(this._uid + '_SVGID_2_', s.hoverColor, s.hoverColor, s.starShape) +
@@ -277,7 +279,9 @@
       var _name = 'plugin_' + pluginName;
       var $el = $(this);
       var $plugin = $el.data(_name);
-      if( rating > $plugin.settings.totalStars || rating < 0 ) { return; }
+      if( rating > $plugin.settings.totalStars || rating < 0 ) {
+        return;
+      }
       if( round ){
         rating = Math.round(rating);
       }

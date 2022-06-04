@@ -1,6 +1,6 @@
 
 $(function() {
-  $(".my-rating").starRating({
+  $('.my-rating').starRating({
     totalStars: 5,
     emptyColor: 'lightgray',
     hoverColor: 'salmon',
@@ -11,7 +11,7 @@ $(function() {
     readOnly: true
   });
 
-  $(".my-rating-edit").starRating({
+  $('.my-rating-edit').starRating({
     totalStars: 5,
     emptyColor: 'lightgray',
     hoverColor: 'salmon',
