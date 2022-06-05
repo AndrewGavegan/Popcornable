@@ -6,14 +6,14 @@ const newReview = async (e) => {
 
   // for postiong a review //
   if (body && rating) {
-    const res = await fetch('/api/reviews', {
+    const res = await fetch('/api/review', {
       method: 'POST',
       body: JSON.stringify({ body, rating, movie_id }),
       headers: { 'Content-Type': 'application/json' },
     });
     // can change this location once we know exactly what files are named what //
     if (res.ok) {
-      document.location.assign(`/movie/${movie_id}`);
+      document.location.reload();
     }
   }
 };
@@ -41,7 +41,7 @@ const updateReview = async (e) => {
         // can change this location once we know exactly what files are named what //
         if (res.ok) {
           alert('Review updated');
-          document.location.assign('/user');
+          document.location.reload();
         }
       }
     } else if (elementType === 'delete') {
@@ -54,7 +54,7 @@ const updateReview = async (e) => {
 
         if (response.ok) {
           alert('Post deleted');
-          document.location.assign('/user');
+          document.location.reload();
         }
       }
     }
