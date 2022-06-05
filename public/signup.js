@@ -7,7 +7,7 @@ const signUpSubmit = async (e) => {
 
   if (name && email && password) {
     // create a post request with the details entered
-    const res = await fetch('/api/users/', {
+    const res = await fetch('/api/user', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -15,13 +15,12 @@ const signUpSubmit = async (e) => {
 
     if (res.ok) {
       // redirect to homepage
-      document.location.assign('/');
+      document.location.replace('/');
     } else {
       //  alert user if request has failed
-      alert('Error, could not sign in');
+      alert('Error, could not sign up \n' + res.statusText);
     }
   }
 };
 
-// presuming element is given the class signUpForm
-document.querySelector('.signUpForm').addEventListener('submit', signUpSubmit);
+document.querySelector('.signup-form').addEventListener('submit', signUpSubmit);
