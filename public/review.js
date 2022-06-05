@@ -1,17 +1,12 @@
-
-document.querySelector('').addEventListener('click', newReview);
-
 const newReview = async (e) => {
   e.preventDefault();
-
-  const body = document.querySelector('').value.trim();
-  const rating = document.querySelector('').value.trim();
-  const movie_id = document.querySelector('').value.trim();
-
+  const body = document.querySelector('#collapse .card-body #content').value.trim();
+  const rating = document.querySelector('#collapse .card-header .my-rating-edit').getAttribute('data-rating');
+  const movie_id = e.target.getAttribute('data-post');
 
   // for postiong a review //
   if (body && rating) {
-    const res = await fetch('/api/users/review', {
+    const res = await fetch('/api/user/review', {
       method: 'POST',
       body: JSON.stringify({ body, rating, movie_id }),
       headers: { 'Content-Type': 'application/json' },
@@ -23,19 +18,6 @@ const newReview = async (e) => {
   }
 };
 
-    // for postiong a review //
-    if (body && rating) {
-        const res = await fetch('/api/reviews', {
-            method: 'POST',
-            body: JSON.stringify({ body, rating, movie_id }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        // can change this location once we know exactly what files are named what //
-        if (res.ok) {
-            document.location.replace(`/movie/${movie_id}`);
-        }
-    }
-}
 
 const updateReview = async (e) => {
   e.preventDefault();
@@ -49,7 +31,7 @@ const updateReview = async (e) => {
       const parent = element.parentElement;
       const body = parent.querySelector(`#content-${post_id}`).value.trim();
       const rating = parent.querySelector(`.my-rating-edit`).getAttribute("data-rating");
-    
+
       // for posting a review //
       if (body && rating) {
         const res = await fetch(`/api/review/${post_id}`, {
@@ -80,6 +62,8 @@ const updateReview = async (e) => {
   }
 }
 
-// document.querySelector('').addEventListener('click', newReview);
-document.querySelector('.reviews').addEventListener('click', updateReview);
-
+if (document.location.href.includes('movie')) {
+  document.querySelector('#addBtn').addEventListener('click', newReview);
+} else {
+  document.querySelector('.reviews').addEventListener('click', updateReview)
+}

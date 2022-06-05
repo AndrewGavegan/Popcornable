@@ -13,12 +13,11 @@
                 <input class="form-control " list="datalistOptions" id="userInput"
                   placeholder="Type to search movies...">
                 <datalist id="datalistOptions">
-                  {{!-- <option value="San Francisco">
-                  <option value="New York">
-                  <option value="Seattle">
-                  <option value="Los Angeles">
-                  <option value="Chicago"> --}}
+                  {{#each movies as |movie|}}
+                  <option data-movieid='{{movie.id}}' value='{{movie.name}}'>
+                    {{/each}}
                 </datalist>
+
               </div>
               <div class="col-md-2">
                 <button type='submit' id='submitBtn' class='btn btn-primary mb-4'>Search</button>
@@ -32,7 +31,7 @@
     </div>
     <div class="album py-5 bg-light">
       <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="viewMovies">
           {{#each reviews as |review|}}
           {{> homeposts}}
           {{/each}}
@@ -40,4 +39,6 @@
       </div>
     </div>
   </section>
+  {{!--
+  <script src="/search.js"></script> --}}
 </main>
