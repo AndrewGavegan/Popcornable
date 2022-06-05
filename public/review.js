@@ -1,7 +1,7 @@
 const newReview = async (e) => {
   e.preventDefault();
   const body = document.querySelector('#collapse .card-body #content').value.trim();
-  const rating = document.querySelector('#collapse .card-header .my-rating-edit').value.trim();
+  const rating = document.querySelector('#collapse .card-header .my-rating-edit').getAttribute('data-rating');
   const movie_id = e.target.getAttribute('data-post');
 
   // for postiong a review //
@@ -17,6 +17,14 @@ const newReview = async (e) => {
     }
   }
 };
+
+const viewBtn = document.querySelector('#viewBtn');
+viewBtn.addEventListener('click', async function (e) {
+  e.preventDefault();
+  const movie_id = e.target.getAttribute('data-movieid')
+  console.log(movie_id);
+  document.location.replace(`/api/movie/${movie_id}`);
+})
 
 
 const updateReview = async (e) => {
@@ -63,7 +71,7 @@ const updateReview = async (e) => {
 }
 
 if (document.location.href.includes('movie')) {
-  document.querySelector('').addEventListener('click', newReview);
+  document.querySelector('#addBtn').addEventListener('click', newReview);
 } else {
   document.querySelector('.reviews').addEventListener('click', updateReview)
 }

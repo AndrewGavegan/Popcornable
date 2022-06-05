@@ -8,11 +8,10 @@ searchBtn.addEventListener('click', async function (event) {
   req = await fetch(`/api/movie/${res.join('')}`);
 });
 
-
-const viewBtn = document.querySelector('#viewBtn');
-
-viewBtn.addEventListener('click', async function (e) {
+const container = document.querySelector('#viewMovies');
+container.addEventListener('click', async function (e) {
   e.preventDefault();
-  const movie_id = e.target.getAttribute('data-movieid')
+  let movie_id = e.target.getAttribute('data-movieid')
+  console.log(movie_id);
   document.location.replace(`/api/movie/${movie_id}`);
 })

@@ -9,8 +9,8 @@
             <h2>{{movie.name}}</h2>
             <div class="mb-1">Genre: {{movie.genre}}</div>
             <div class="mb-1">Director: {{movie.director}}</div>
-            <button class="btn btn-light" type="button" data-bs-toggle="collapse" aria-controls="collapse"> Add
-                review</button>
+            <button class="btn btn-light" id="addBtn" type="button" data-bs-toggle="collapse" aria-controls="collapse">
+                Add review</button>
         </div>
     </div>
     <section class="m-5">
@@ -29,6 +29,6 @@
         {{>reviewcard}}
         {{/each}}
     </section>
-    <script src="../public/review.js"></script>
-    <script src="../public/src/jquery.star-rating-svg.js"></script>
+    <script src="../../review.js"></script>
+    <script src="../../starRating.js"></script>
 </div>

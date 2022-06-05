@@ -5,12 +5,7 @@ const { Movie, Review, User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const movieData = await Movie.findAll({
-      include: [
-        {
-          model: Movie,
-          attributes: ['name', 'description', 'image_url'],
-        },
-      ],
+      attributes: ['name', 'image_url'],
     });
     const movies = movieData.map((movie) =>
       movie.get({ plain: true })
