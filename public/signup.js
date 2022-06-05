@@ -15,7 +15,7 @@ const signUpSubmit = async (e) => {
 
     if (res.ok) {
       // redirect to homepage
-      document.location.replace('/');
+      document.location.assign('/');
     } else {
       //  alert user if request has failed
       alert('Error, could not sign in');
