@@ -9,7 +9,7 @@ const newReview = async (e) => {
 
   // for postiong a review //
   if (body && rating) {
-    const res = await fetch('/api/review', {
+    const res = await fetch('/api/user/review', {
       method: 'POST',
       body: JSON.stringify({ body, rating, movie_id }),
       headers: { 'Content-Type': 'application/json' },
