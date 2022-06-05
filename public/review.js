@@ -1,11 +1,8 @@
-
 const newReview = async (e) => {
   e.preventDefault();
-
-  const body = document.querySelector('').value.trim();
-  const rating = document.querySelector('').value.trim();
-  const movie_id = document.querySelector('').value.trim();
-
+  const body = document.querySelector('#collapse .card-body #content').value.trim();
+  const rating = document.querySelector('#collapse .card-header .my-rating-edit').value.trim();
+  const movie_id = e.target.getAttribute('data-post');
 
   // for postiong a review //
   if (body && rating) {

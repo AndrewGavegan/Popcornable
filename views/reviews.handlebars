@@ -1,1 +1,34 @@
-{{!-- // redo whole thing // --}}
+<div class="container">
+    <div class="row g-3">
+        <div class="col-lg-5 col-sm-12 col-md-6">
+            <div class="card shadow-sm">
+                <img src="{{movie.image_url}}"></img>
+            </div>
+        </div>
+        <div class="col p-4 d-flex flex-column position-static">
+            <h2>{{movie.name}}</h2>
+            <div class="mb-1">Genre: {{movie.genre}}</div>
+            <div class="mb-1">Director: {{movie.director}}</div>
+            <button class="btn btn-light" type="button" data-bs-toggle="collapse" aria-controls="collapse"> Add
+                review</button>
+        </div>
+    </div>
+    <section class="m-5">
+        <h2>Reviews</h2>
+        <div class="card m-1 collapse" id="collapse">
+            <div class="card-header">
+                <div class="my-rating-edit" data-rating="3"></div>
+            </div>
+            <div class="card-body">
+                <textarea class="form-control text-break" id="content" rows="3"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary new-post" data-post="{{movie.id}}">Post Review</button>
+            </div>
+        </div>
+        {{#each movie.reviews as |review|}}
+        {{>reviewcard}}
+        {{/each}}
+    </section>
+    <script src="../public/review.js"></script>
+    <script src="../public/src/jquery.star-rating-svg.js"></script>
+</div>
