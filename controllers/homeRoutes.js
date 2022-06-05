@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Movie, Review, User } = require('../models');
-// Import the custom middleware
-const checkAuth = require('../utils/auth');
+const { Movie, Review } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -17,7 +14,7 @@ router.get('/', async (req, res) => {
     const reviews = reviewData.map((post) => post.get({ plain: true }));
 
     const movieData = await Movie.findAll({
-      attributes: ['name'],
+      attributes: ['name', 'id'],
     });
 
     const movies = movieData.map((post) => post.get({ plain: true }));
