@@ -53,6 +53,7 @@ router.get('/:id', async (req, res) => {
     // render homepage (and partial homeposts)
     res.render('dashboard', {
       data,
+      userId: req.session.user_id,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
