@@ -16,9 +16,16 @@ router.get('/', async (req, res) => {
 
     const reviews = reviewData.map((post) => post.get({ plain: true }));
 
+    const movieData = await Movie.findAll({
+      attributes: ['name'],
+    });
+
+    const movies = movieData.map((post) => post.get({ plain: true }));
+
     // render homepage (and partial homeposts)
     res.render('homepage', {
       reviews,
+      movies,
       loggedIn: req.session.loggedIn,
     });
   } catch (error) {

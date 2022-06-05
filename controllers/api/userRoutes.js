@@ -45,7 +45,6 @@ router.get('/:id', async (req, res) => {
         }]
     });
 
-    })
     const data = userData.get({ plain: true });
     if (!data) {
       res.status(404).json({ message: 'No user has this ID' });
