@@ -19,16 +19,17 @@
   <header class="blog-header py-3">
     <div class="container">
       <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-2 pt-1">
+        <div class="col-8 pt-1">
           <a class="btn btn-sm" href="/">Home</a>
           <a class="btn btn-sm" href="/api/movie">All Movies</a>
-        </div>
-        <div class="col-6 text-center">
+          {{#if loggedIn}}
+          <a class="btn btn-sm" href="/api/user/{{userId}}">Dashboard</a>
+          {{/if}}
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
           {{#if loggedIn}}
-          <a class="btn btn-sm" href="/api/user/{{userId}}">Dashboard</a>
-          <button id="logout" class="btn btn-light">Logout</button>
+          <div class="m-2">Hi {{userName}}!   </div>
+          <button id="logoutBtn" class="btn btn-light">Logout</button>
           {{else}}
           <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
           <a class="btn btn-sm" href="/signup">Sign up</a>
@@ -42,6 +43,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
+    {{#if loggedIn}}
+    <script src="../../logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

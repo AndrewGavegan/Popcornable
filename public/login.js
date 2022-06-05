@@ -8,7 +8,7 @@ const loginSubmit = async (e) => {
 
   if (email && password) {
     // api/users/login presuming we use that route //
-    const res = await fetch('/api/users/login', {
+    const res = await fetch('/api/user/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' }

@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
       reviews,
       movies,
       userId: req.session.user_id,
+      userName: req.session.name,
       loggedIn: req.session.loggedIn,
     });
   } catch (error) {

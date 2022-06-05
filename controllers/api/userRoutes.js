@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Review, Movie } = require('../../models');
+// linking to authentifictaion middleware that was set up in utils folder //
+const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -25,7 +27,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+// route to user's dashboard
+router.get('/:id', withAuth, async (req, res) => {
   try {
     console.log(`GET /api/user/${req.params.id}`);
     const userData = await User.findOne({
@@ -54,6 +57,7 @@ router.get('/:id', async (req, res) => {
     res.render('dashboard', {
       data,
       userId: req.session.user_id,
+      userName: req.session.name,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -64,10 +68,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const data = await User.create({ username: req.body.username, email: req.body.email, password: req.body.password });
+    const data = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    });
     req.session.save(() => {
       req.session.user_id = data.id;
-      req.session.username = data.username;
+      req.session.name = data.name;
       req.session.loggedIn = true;
 
       res.status(200).json(data);
@@ -97,7 +105,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = data.id;
-      req.session.username = data.username;
+      req.session.name = data.name;
       req.session.loggedIn = true;
 
       res.json({ user: data, message: 'You are now logged in!' });
