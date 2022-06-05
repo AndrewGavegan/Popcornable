@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     console.log(movies);
     res.render('allmovies', {
       movies,
+      userId: req.session.user_id,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -40,6 +41,7 @@ router.get('/:id', async (req, res) => {
     }
     res.render('reviews', {
       movie,
+      userId: req.session.user_id,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

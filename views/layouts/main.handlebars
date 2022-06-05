@@ -27,6 +27,7 @@
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
           {{#if loggedIn}}
+          <a class="btn btn-sm" href="/api/user/{{userId}}">Dashboard</a>
           <button id="logout" class="btn btn-light">Logout</button>
           {{else}}
           <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>

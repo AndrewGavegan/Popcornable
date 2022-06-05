@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       reviews,
       movies,
+      userId: req.session.user_id,
       loggedIn: req.session.loggedIn,
     });
   } catch (error) {
