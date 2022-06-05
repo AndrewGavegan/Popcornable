@@ -20,10 +20,12 @@
     <div class="container">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-2 pt-1">
+          <a class="btn btn-sm" href="/">Home</a>
+          <a class="btn btn-sm" href="/api/movies">All Movies</a>
         </div>
-        <div class="col-8 text-center">
+        <div class="col-6 text-center">
         </div>
-        <div class="col-2 d-flex justify-content-end align-items-center">
+        <div class="col-4 d-flex justify-content-end align-items-center">
           {{#if loggedIn}}
           <button id="logout" class="btn btn-light">Logout</button>
           {{else}}
@@ -40,12 +42,4 @@
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
 </body>
-
-{{!--
-<script src='/public/logout.js'></script>
-<script src='/public/login.js'></script>
-<script src='/public/review.js'></script>
-<script src='/public/signup.js'></script>
-<script src='/public/dashboard.js'></script> --}}
-
 </html>

@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { User, Review, Movie } = require('../../models');
-// linking to authentifictaion middleware that was set up in utils folder //
-const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -53,7 +51,7 @@ router.get('/:id', async (req, res) => {
     console.log(data.reviews);
     // res.json(data);
     // render homepage (and partial homeposts)
-    res.render("dashboard", {
+    res.render('dashboard', {
       data,
       loggedIn: req.session.loggedIn,
     });
@@ -99,7 +97,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = data.id;
       req.session.username = data.username;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.json({ user: data, message: 'You are now logged in!' });
     });
@@ -109,7 +107,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });

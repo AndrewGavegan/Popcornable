@@ -16,7 +16,7 @@ const loginSubmit = async (e) => {
 
     if (res.ok) {
       // redirects to homepage if you login succesfully //
-      document.location.replace('/');
+      document.location.assign('/');
     } else {
       alert('Error, Incorrect username or password');
     }

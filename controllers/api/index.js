@@ -4,8 +4,8 @@ const movieRoutes = require('./movieRoutes');
 const reviewRoutes = require('./reviewRoutes');
 
 
-router.use('/user', userRoutes)
-router.use('/movie', movieRoutes)
-router.use('/review', reviewRoutes)
+router.use('/user', userRoutes);
+router.use('/movie', movieRoutes);
+router.use('/review', reviewRoutes);
 
 module.exports = router;

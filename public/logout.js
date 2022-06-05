@@ -5,7 +5,7 @@ const logoutSubmit = async () => {
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    document.location.assign('/');
   } else {
     alert(res.status);
   }
