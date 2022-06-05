@@ -2,9 +2,9 @@ const loginSubmit = async (e) => {
   e.preventDefault();
 
   // fill in the element on the page to be selected //
-  const email = document.querySelector('').value.trim();
+  const email = document.querySelector('#email-login').value.trim();
   // fill in the element on the page to be selected //
-  const password = document.querySelector('').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
     // api/users/login presuming we use that route //
@@ -24,4 +24,4 @@ const loginSubmit = async (e) => {
 };
 
 // presuming we name the form element an ID of loginForm //
-document.querySelector('loginForm').addEventListener('submit', loginSubmit);
+document.querySelector('.login-form').addEventListener('submit', loginSubmit);

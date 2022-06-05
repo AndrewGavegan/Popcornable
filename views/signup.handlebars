@@ -1,21 +1,23 @@
-<div class="container row">
-    <div class="jumbotron col-sm-4 pull-center">
-        <form action="/signup" method="post">
-            <div>
-                <label>Username:</label>
-                <input type="text" name="username"/>                     
+<section class="py-5 container">
+    <div class="col-md-8">
+        <h2>Signup:</h2>
+        <form class="form signup-form row g-3">
+            <div class="form-group row-auto">
+                <label for="name-signup">Username:</label>
+                <input class="form-input form-control" type="text" id="name-signup" />
             </div>
-            <div>
-                <label>Email:</label>
-                <input type="email" name="email"/>
+            <div class="form-group row-auto">
+                <label for="email-signup">Email:</label>
+                <input class="form-input form-control" type="text" id="email-signup" />
             </div>
-            <div>
-                <label>Password:</label>
-                <input type="password" name="password"/>
+            <div class="form-group row-auto">
+                <label for="password-signup">Password:</label>
+                <input class="form-input form-control" type="password" id="password-signup" />
             </div>
-            <div>
-                <input class="btn btn-primary" type="submit" value="Sign Up"/>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Signup Now!</button>
             </div>
         </form>
     </div>
-</div>
+</section>
+<script src="../../signup.js"></script>
