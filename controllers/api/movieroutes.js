@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Movie} = require('../../models');
+const { Movie } = require('../../models');
 
 // find all movies
 router.get('/', async (req, res) => {
