@@ -5,7 +5,7 @@ const { Movie, Review, User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const movieData = await Movie.findAll({
-      attributes: ['name', 'image_url'],
+      attributes: ['id', 'name', 'image_url'],
       order: [
         ['name', 'ASC'],
       ]
