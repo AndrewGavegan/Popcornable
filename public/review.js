@@ -18,14 +18,6 @@ const newReview = async (e) => {
   }
 };
 
-const viewBtn = document.querySelector('#viewBtn');
-viewBtn.addEventListener('click', async function (e) {
-  e.preventDefault();
-  const movie_id = e.target.getAttribute('data-movieid')
-  console.log(movie_id);
-  document.location.replace(`/api/movie/${movie_id}`);
-})
-
 
 const updateReview = async (e) => {
   e.preventDefault();
