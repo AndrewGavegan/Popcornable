@@ -24,4 +24,4 @@ const loginSubmit = async (e) => {
 };
 
 // presuming we name the form element an ID of loginForm //
-document.querySelector('loginForm').addEventListener('submit', loginSubmit);
+document.querySelector('.login-form').addEventListener('submit', loginSubmit);
