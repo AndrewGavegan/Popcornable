@@ -19,12 +19,13 @@
 </head>
 
 <body>
-  <header class="blog-header py-3">
+  <header class="blog-header py-3"
+    style="background-image: url(https://media.istockphoto.com/photos/background-of-fresh-made-popcorn-picture-id149066514);">
     <div class="container">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-8 pt-1">
-          <a class="btn btn-sm" href="/">Home</a>
-          <a class="btn btn-sm" href="/api/movie">All Movies</a>
+          <a class="btn btn-sm" style="background: white;" href="/">Home</a>
+          <a class="btn btn-sm" style="background: white;" href="/api/movie">All Movies</a>
           {{#if loggedIn}}
           <a class="btn btn-sm" href="/api/user/{{userId}}">Dashboard</a>
           {{/if}}
@@ -34,8 +35,8 @@
           <div class="m-2">Hi {{userName}}! </div>
           <button id="logoutBtn" class="btn btn-light">Logout</button>
           {{else}}
-          <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
-          <a class="btn btn-sm" href="/signup">Sign up</a>
+          <a class="btn btn-sm btn-outline-secondary" style="background: white;" href="/login">Login</a>
+          <a class="btn btn-sm" style="background: white;" href="/signup">Sign up</a>
           {{/if}}
         </div>
       </div>
