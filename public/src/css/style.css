@@ -1,0 +1,35 @@
+* {
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background: lightgrey;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.card {
+    border: 5px solid white;
+    border-radius: 8px;
+    background: white;
+}
+
+.card-body,
+.card-text {
+    background: white;
+}
+
+.blog-header {
+    background: white;
+}
+
+.album,
+.movies {
+    background: lightgrey;
+}
+
+.btn-sm {
+    margin-left: 5px;
+}
