@@ -82,7 +82,6 @@ router.post('/', async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
-    alert("Error creating user, password must be minimum 8 characters long")
   }
 });
 
