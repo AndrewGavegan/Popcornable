@@ -3,12 +3,11 @@
 ## Table of contents
 * [Description](#Description)
 * [Website](#Website)
-* [Installation](Installation)
-* [Usage](Usage)
-* [License](License)
-* [Credits](Credits)
-* [Questions](Questions)
----
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Credits](#Credits)
+* [Questions](#Questions)
 
 ## Description
 
@@ -16,14 +15,9 @@ Popcornable is a full stack web application where users can rate and review movi
 
 This application uses node.JS and MySql as the two main programs. The packages needed for this application to run are `mysql2`, `sequelize`, `connect-session-sequelize`, `dotenv`, `bcrypt`, `express`, `express-handlebars`, `express-session`, `eslint`, `prettier` and `dayjs`. 
 
----
-
 ## Website
 
 Visit [this](https://popcornable.herokuapp.com/) to see the application in action.
-
----
-
 
 ## Installation
 
@@ -48,8 +42,6 @@ After that, the database tables will need to be seeded by running
 npm run seed
 ```
 
----
-
 ## Usage 
 
 To run the program, run the code below:
@@ -66,25 +58,19 @@ If you just want to view the reviews of a specific movie, you can type it in to 
 
 If you have no preference and just wish to browse, the all movies button will take you to a page showing you all the posters of movies that you can view or review by following the button prompt.
 
-
----
 ## Credits 
 
 This project was completed collaboratively by the users listed as collaborators; [Glenn Digal](https://github.com/gd741), [Robert Sabaruddin](https://github.com/MrRob888), [Alyssa Natividad](https://github.com/alainatividad) and [Andrew Gavegan](https://github.com/AndrewGavegan).
 
 The Star Rating is by [Ignacio Chavez](https://github.com/nashio/star-rating-svg)
 
----
-
 ## License
 
 MIT 
 
----
 ## Badges
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
 ## Questions
 Please also direct questions to: AndrewGavegan, https://github.com/AndrewGavegan and zzandrewzz@optusnet.com.au
