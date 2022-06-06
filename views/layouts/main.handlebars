@@ -27,15 +27,15 @@
           <a class="btn btn-sm" style="background: white;" href="/">Home</a>
           <a class="btn btn-sm" style="background: white;" href="/api/movie">All Movies</a>
           {{#if loggedIn}}
-          <a class="btn btn-sm" href="/api/user/{{userId}}">Dashboard</a>
+          <a class="btn btn-sm" style="background: white;" href="/api/user/{{userId}}">Dashboard</a>
           {{/if}}
         </div>
         <div class="col-4 d-flex justify-content-end align-items-center">
           {{#if loggedIn}}
-          <div class="m-2">Hi {{userName}}! </div>
-          <button id="logoutBtn" class="btn btn-light">Logout</button>
+          <div class="m-2" style="background: white;">Hi {{userName}}! </div>
+          <button id="logoutBtn" class="btn btn-sm" style="background: white;">Logout</button>
           {{else}}
-          <a class="btn btn-sm btn-outline-secondary" style="background: white;" href="/login">Login</a>
+          <a class="btn btn-sm" style="background: white;" href="/login">Login</a>
           <a class="btn btn-sm" style="background: white;" href="/signup">Sign up</a>
           {{/if}}
         </div>
