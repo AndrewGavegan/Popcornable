@@ -20,7 +20,7 @@ This application uses node.JS and MySql as the two main programs. The packages n
 
 ## Website
 
-Visit [this](https://.herokuapp.com/) to see the application in action.
+Visit [this](https://popcornable.herokuapp.com/) to see the application in action.
 
 ---
 
