@@ -18,7 +18,7 @@ const signUpSubmit = async (e) => {
       document.location.replace('/');
     } else {
       //  alert user if request has failed
-      alert('Error, could not sign up \n' + res.statusText);
+      alert('Error creating user, password must be minimum 8 characters long');
     }
   }
 };
