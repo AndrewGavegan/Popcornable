@@ -10,16 +10,16 @@
             <div class="mb-1">Genre: {{movie.genre}}</div>
             <div class="mb-1">Director: {{movie.director}}</div>
             {{#if loggedIn}}
-            <button class="btn btn-light" id="addBtn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"
-                aria-expanded="false" aria-controls="collapse">
-                Add review</button>
+            <a href="#reviewTab"><button class="btn btn-light" id="addBtn" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse">
+                    Add review</button></a>
             {{else}}
             <div class="m-3 mt-5"><a href="/login">Login</a> or <a href="/signup">Sign up</a> to add a review</div>
             {{/if}}
         </div>
     </div>
     <section class="m-5">
-        <h2>Reviews</h2>
+        <h2 id="reviewTab">Reviews</h2>
         <div class="card m-1 collapse" id="collapse">
             <div class="card-header">
                 <div class="my-rating-edit" data-rating="3"></div>
