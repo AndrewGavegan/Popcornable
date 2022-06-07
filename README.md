@@ -62,7 +62,9 @@ If you have no preference and just wish to browse, the all movies button will ta
 
 This project was completed collaboratively by the users listed as collaborators; [Glenn Digal](https://github.com/gd741), [Robert Sabaruddin](https://github.com/MrRob888), [Alyssa Natividad](https://github.com/alainatividad) and [Andrew Gavegan](https://github.com/AndrewGavegan).
 
-The Star Rating is by [Ignacio Chavez](https://github.com/nashio/star-rating-svg)
+The Star Rating is by [Ignacio Chavez](https://github.com/nashio/star-rating-svg).
+
+Our database's movie table is seeded by [The Movie Database (TMDB) API](https://api.themoviedb.org/3).
 
 ## License
 
